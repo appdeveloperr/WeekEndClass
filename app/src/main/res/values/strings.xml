@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">FirstActivity</string>
+    <string name="hello">Hello World!</string>
+</resources>

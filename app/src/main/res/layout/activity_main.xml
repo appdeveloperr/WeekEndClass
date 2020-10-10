@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="@color/bckblue"
+    >
+
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <RelativeLayout
+        android:id="@+id/RL1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+    <ImageView
+        android:id="@+id/logo_Iv"
+        android:layout_width="@dimen/_152sdp"
+        android:layout_height="@dimen/_152sdp"
+        android:src="@drawable/memio_logo"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/_80sdp"
+        />
+
+
+    
+    <EditText
+        android:id="@+id/aceessCode_Ed"
+        android:layout_centerHorizontal="true"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_50sdp"
+        android:background="@drawable/edit_text_round"
+        android:hint="Code"
+        android:maxLines="1"
+        android:maxLength="11"
+        android:inputType="number"
+        android:paddingLeft="@dimen/_20sdp"
+        android:textColorHint="#ffffff"
+        android:textColor="#ffffff"
+        android:textSize="@dimen/_14sdp"
+        android:fontFamily="@font/gothammedium"
+        android:layout_below="@+id/logo_Iv"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginRight="@dimen/_20sdp"
+        android:layout_marginLeft="@dimen/_20sdp"
+
+        />
+
+
+
+
+        <RelativeLayout
+            android:id="@+id/seeInfo_Rl"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_45sdp"
+            android:layout_below="@+id/aceessCode_Ed"
+            android:background="@drawable/button_back_round"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:layout_marginLeft="@dimen/_20sdp"
+            android:layout_marginRight="@dimen/_20sdp">
+
+
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="SEE INFO"
+                android:fontFamily="@font/gotham_bold"
+                android:textColor="#0F1E3D"
+                android:layout_centerVertical="true"
+                android:paddingLeft="@dimen/_20sdp"/>
+
+
+            <ImageView
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingRight="@dimen/_15sdp"
+
+                android:src="@drawable/forward_arrow" />
+
+
+        </RelativeLayout>
+    </RelativeLayout>
+
+              <RelativeLayout
+        android:id="@+id/RL2"
+        android:layout_below="@id/RL1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+        </RelativeLayout>
+
+
+
+    </ScrollView>
+
+
+</RelativeLayout>

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SecondScreen"
+    android:background="@color/bckblue"
+    >
+
+
+
+
+
+
+        <ImageView
+            android:id="@+id/logo_Iv"
+            android:layout_width="@dimen/_152sdp"
+            android:layout_height="@dimen/_152sdp"
+            android:layout_marginTop="@dimen/_80sdp"
+            android:src="@drawable/memio_logo"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintRight_toRightOf="parent"/>
+
+
+        <EditText
+            android:id="@+id/aceessCode_Ed"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_50sdp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="20dp"
+            android:background="@drawable/edit_text_round"
+            android:fontFamily="@font/gothammedium"
+            android:hint="Code"
+            android:inputType="number"
+            android:maxLength="11"
+            android:maxLines="1"
+            android:paddingLeft="@dimen/_20sdp"
+            android:textColor="#ffffff"
+            android:textColorHint="#ffffff"
+            android:textSize="@dimen/_14sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/logo_Iv" />
+
+
+        <RelativeLayout
+            android:id="@+id/seeInfo_Rl"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_45sdp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+            android:background="@drawable/button_back_round"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/aceessCode_Ed">
+
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:paddingRight="@dimen/_15sdp"
+
+                    android:src="@drawable/forward_arrow" />
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:fontFamily="@font/gotham_bold"
+                    android:paddingLeft="@dimen/_20sdp"
+                    android:text="SEE INFO"
+                    android:textColor="#0F1E3D" />
+
+
+        </RelativeLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
