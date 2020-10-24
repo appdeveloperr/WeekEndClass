@@ -1,0 +1,14 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <item android:id="@+id/fragment1"
+        android:title="fragment One"
+        android:icon="@drawable/home"/>
+
+    <item android:id="@+id/fragment2"
+        android:title="fragment Two"
+        android:icon="@drawable/order"/>
+
+
+</menu>

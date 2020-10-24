@@ -8,12 +8,19 @@
     </style>
 
 
-    <style name="customButton" >
+    <style name="customButton">
         <item name="android:background">#ffdd00</item>
         <item name="android:textColor">#ff22ff</item>
     </style>
 
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
 
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
 
 </resources>

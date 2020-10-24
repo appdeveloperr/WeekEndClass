@@ -1,16 +1,17 @@
 package com.project.usmansh.firstactivity;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.Toast;
 
-import com.project.usmansh.firstactivity.Adapter.StudentAdapter;
+import com.project.usmansh.firstactivity.Adapter.StudentLVAdapter;
+import com.project.usmansh.firstactivity.Adapter.StudentRVAdapter;
 import com.project.usmansh.firstactivity.Model.Student;
 
 import java.util.ArrayList;
@@ -22,9 +23,13 @@ public class StudentListActivity extends AppCompatActivity {
 //    ArrayList<String> namesList;
 
 
-    ListView studentListView,studentListViewTwo;
+    ListView studentListView;
+    RecyclerView studentRecyclerView;
+
+    StudentLVAdapter studentLVAdapter;
+    StudentRVAdapter studentRVAdapter;
+
     ArrayList<Student> studentsList = new ArrayList<>();
-    StudentAdapter studentAdapter;
 
 
 
@@ -36,7 +41,7 @@ public class StudentListActivity extends AppCompatActivity {
 
 
         studentListView = findViewById(R.id.studentListView);
-        studentListViewTwo = findViewById(R.id.studentListView2);
+        studentRecyclerView = findViewById(R.id.studentRecyclerView);
 
         Student s1 = new Student("Waleed","03223123123","Lahore");
         Student s2 = new Student("Bilal","21312312124","Karachi");
@@ -60,11 +65,20 @@ public class StudentListActivity extends AppCompatActivity {
         studentsList.add(s9);
         studentsList.add(s10);
 
+        //ListView Adapter
+        studentLVAdapter = new StudentLVAdapter(StudentListActivity.this,studentsList);
+        studentListView.setAdapter(studentLVAdapter);
 
-        studentAdapter = new StudentAdapter(StudentListActivity.this,studentsList);
 
-        studentListView.setAdapter(studentAdapter);
-        studentListViewTwo.setAdapter(studentAdapter);
+        //RecyclerView Adapter
+        LinearLayoutManager mLayoutManager = new LinearLayoutManager(getApplicationContext());
+        mLayoutManager.setOrientation(RecyclerView.VERTICAL);
+        studentRecyclerView.setLayoutManager(mLayoutManager);
+        studentRVAdapter = new StudentRVAdapter(StudentListActivity.this,studentsList);
+        studentRecyclerView.setAdapter(studentRVAdapter);
+
+
+
 
 
         studentListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -72,7 +86,6 @@ public class StudentListActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
 
                 Student student = studentsList.get(position);
-
                 Intent intent = new Intent(StudentListActivity.this,StudentDetail.class);
                 intent.putExtra("name", student.getName());
                 intent.putExtra("phone", student.getPhone());
@@ -84,18 +97,6 @@ public class StudentListActivity extends AppCompatActivity {
 
 
 
-        studentListViewTwo.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
 
-                Student student = studentsList.get(position);
-
-                Intent intent = new Intent(StudentListActivity.this,StudentDetail.class);
-                intent.putExtra("name", student.getName());
-                intent.putExtra("phone", student.getPhone());
-                intent.putExtra("address", student.getAddress());
-                startActivity(intent);
-            }
-        });
     }
 }

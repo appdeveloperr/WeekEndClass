@@ -13,12 +13,12 @@ import de.hdodenhof.circleimageview.CircleImageView;
 
 
 
-public class StudentAdapter extends BaseAdapter {
+public class StudentLVAdapter extends BaseAdapter {
 
         Context context;
         ArrayList<Student> studentsList;
 
-        public StudentAdapter(Context ctx, ArrayList<Student> stuList){
+        public StudentLVAdapter(Context ctx, ArrayList<Student> stuList){
             context = ctx;
             studentsList = stuList;
         }

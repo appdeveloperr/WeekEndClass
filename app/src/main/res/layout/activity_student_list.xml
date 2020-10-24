@@ -11,20 +11,22 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
+
     <ListView
         android:id="@+id/studentListView"
+        tools:listitem="@layout/item_student"
         android:layout_width="match_parent"
         android:layout_height="@dimen/_200sdp"/>
 
 
-
-
-    <ListView
-        android:id="@+id/studentListView2"
-        android:layout_below="@+id/studentListView"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/studentRecyclerView"
+        tools:listitem="@layout/item_student"
         android:layout_marginTop="@dimen/_10sdp"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent"
+        android:layout_below="@+id/studentListView"/>
 
 
     </RelativeLayout>

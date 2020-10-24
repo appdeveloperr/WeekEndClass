@@ -13,4 +13,19 @@
     <color name="blackTextColor">#0F1E3D</color>
     <color name="editTextBottom">#707070</color>
     <color name="navigation_background_color">#000D27</color>
+
+    <color name="softRed">#E8121F</color>
+    <color name="whiteColor">#ffffff</color>
+    <color name="softGrey">#808080</color>
+    <color name="redColor">#E8121F</color>
+    <color name="blackColor">#000000</color>
+    <color name="lightGrayBack">#F7F8FA</color>
+    <color name="lightBlackText">#1E2432</color>
+    <color name="lightWhite">#FAFAFA</color>
+    <color name="lightBlueBorder">#C8C7D1</color>
+    <color name="GreyViewSeprator">#EFEFEF</color>
+    <color name="softGreen">#02AC19</color>
+    <color name="lightBlackColor">#333333</color>
+    <color name="GreySoftBack">#F2F2F2</color>
+    <color name="filterGray">#EAEBED</color>
 </resources>
