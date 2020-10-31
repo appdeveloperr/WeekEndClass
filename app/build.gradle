@@ -45,5 +45,7 @@ dependencies {
     implementation 'androidx.cardview:cardview:1.0.0'
     //Material Design Library
     implementation 'com.google.android.material:material:1.2.0'
+    //Gson Libray for Data Parsing
+    implementation 'com.google.code.gson:gson:2.8.6'
 
 }

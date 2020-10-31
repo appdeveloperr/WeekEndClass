@@ -5,16 +5,20 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.project.usmansh.firstactivity.Adapter.StudentLVAdapter;
 import com.project.usmansh.firstactivity.Adapter.StudentRVAdapter;
 import com.project.usmansh.firstactivity.Model.Student;
 
 import java.util.ArrayList;
+
+import static com.project.usmansh.firstactivity.MainActivity.PREF_FILE_NAME;
 
 public class StudentListActivity extends AppCompatActivity {
 
@@ -96,7 +100,16 @@ public class StudentListActivity extends AppCompatActivity {
 
 
 
-
+    getDataFromSharedPref();
 
     }
+
+
+    private void getDataFromSharedPref(){
+
+        SharedPreferences prefs = getSharedPreferences(PREF_FILE_NAME, MODE_PRIVATE);
+        String code = prefs.getString("code", "No Code defined");
+        Toast.makeText(this, "Code In SP: "+code, Toast.LENGTH_SHORT).show();
+    }
+
 }
