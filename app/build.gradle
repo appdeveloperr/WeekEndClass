@@ -47,5 +47,15 @@ dependencies {
     implementation 'com.google.android.material:material:1.2.0'
     //Gson Libray for Data Parsing
     implementation 'com.google.code.gson:gson:2.8.6'
+    //ORMLite library
+    implementation 'com.j256.ormlite:ormlite-core:4.48'
+    implementation 'com.j256.ormlite:ormlite-android:4.48'
+    //Lombok library
+    compileOnly 'org.projectlombok:lombok:1.12.6'
+    annotationProcessor 'org.projectlombok:lombok:1.12.6'
 
+    //butterKnife library
+//    implementation 'com.jakewharton:butterknife:8.6.0'
+//    implementation 'com.jakewharton:butterknife:10.0.0'
+//    annotationProcessor 'com.jakewharton:butterknife-compiler:10.0.0'
 }

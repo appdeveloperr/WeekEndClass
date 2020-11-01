@@ -81,9 +81,7 @@ public class StudentListActivity extends AppCompatActivity {
         studentRVAdapter = new StudentRVAdapter(StudentListActivity.this,studentsList);
         studentRecyclerView.setAdapter(studentRVAdapter);
 
-
-
-
+        
 
         studentListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
