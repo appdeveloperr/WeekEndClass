@@ -6,6 +6,11 @@ public class Student {
     String phone;
     String address;
 
+
+    public Student() {
+
+    }
+
     public Student(String name, String phone, String address) {
         this.name = name;
         this.phone = phone;

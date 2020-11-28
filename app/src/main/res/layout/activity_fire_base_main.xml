@@ -1,9 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
+<<<<<<< HEAD
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+=======
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+>>>>>>> 7c228f1933f669748e30384f9625b51b5c4ef2ae
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".FireBaseWorking.FireBaseMainActivity">
 
+<<<<<<< HEAD
 </androidx.constraintlayout.widget.ConstraintLayout>
+=======
+    <Button
+        android:layout_centerInParent="true"
+        android:id="@+id/pickImageBt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Pick Image"
+        tools:layout_editor_absoluteX="184dp"
+        tools:layout_editor_absoluteY="238dp" />
+</RelativeLayout>
+>>>>>>> 7c228f1933f669748e30384f9625b51b5c4ef2ae
