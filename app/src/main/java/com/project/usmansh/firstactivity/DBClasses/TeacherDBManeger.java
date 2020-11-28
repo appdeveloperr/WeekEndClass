@@ -91,6 +91,7 @@ public class TeacherDBManeger  {
         int count = 0;
         try {
             UpdateBuilder updateBuilder = teacherItemDao.updateBuilder();
+
             String index = tecItemDB.getIndex() != null ? tecItemDB.getIndex() : "";
             String id = tecItemDB.getId() != null ? tecItemDB.getId().toString() : "";
             String name = tecItemDB.getName() != null ? tecItemDB.getName() : "";
@@ -124,8 +125,9 @@ public class TeacherDBManeger  {
         try {
             if(teacherItemDao == null) return -1;
             DeleteBuilder deleteBuilder = teacherItemDao.deleteBuilder();
-            if(index != null || !index.isEmpty()) deleteBuilder.where().eq(INDEX,index);
-            deleteBuilder.delete();
+            if(index != null || !index.isEmpty())
+                deleteBuilder.where().eq(INDEX,index);
+                deleteBuilder.delete();
             Log.i(TAG,"user deleted");
             return 0;
         }catch (SQLException | java.sql.SQLException e){

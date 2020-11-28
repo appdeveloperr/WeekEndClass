@@ -106,11 +106,6 @@ public class MainActivity extends AppCompatActivity {
             String phone = "032234712903";
             String address = "Lahore";
 
-//            String name = name.getText().toString().trim();
-//            String phone = phone.getText().toString().trim();
-//            String address = address.getText().toString().trim();
-
-
 
             if (!name.isEmpty() && !phone.isEmpty() && !address.isEmpty()) {
 

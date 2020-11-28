@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "420663697947",
+    "firebase_url": "https://weekendclass-c8520.firebaseio.com",
+    "project_id": "weekendclass-c8520",
+    "storage_bucket": "weekendclass-c8520.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:420663697947:android:9b2aff0212eb74b45e0ebe",
+        "android_client_info": {
+          "package_name": "com.project.usmansh.firstactivity"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "420663697947-vm6u28qnu7atakilepka1j3m13h2628t.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDskUR1gfDoGE0f00qcAiSJCSgZQKfL5i0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "420663697947-vm6u28qnu7atakilepka1j3m13h2628t.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
