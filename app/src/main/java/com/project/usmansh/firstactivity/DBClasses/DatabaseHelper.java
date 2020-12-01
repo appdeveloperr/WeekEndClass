@@ -16,7 +16,11 @@ public class DatabaseHelper extends OrmLiteSqliteOpenHelper {
 
     private static final String DATABASE_NAME = "StudentDB";
     private static final int DATABASE_VERSION = 1;
-    private Dao<StudentItemTable, Long> studentrItemDBS;
+
+    //------Dao=Data Access Object-----//
+
+
+    private Dao<StudentItemTable, Long> studentItemDao;
     private Dao<TeacherItemTable,Long> teacherItemDao;
 
 
@@ -71,16 +75,17 @@ public class DatabaseHelper extends OrmLiteSqliteOpenHelper {
     }
 
 
+    //---Access the object of DatBase to access the all value of table--//
 
     public Dao<StudentItemTable, Long> getStudentItemDao() throws SQLException{
-        if(studentrItemDBS == null){
+        if(studentItemDao == null){
             try {
-                studentrItemDBS = getDao(StudentItemTable.class);
+                studentItemDao = getDao(StudentItemTable.class);
             } catch (java.sql.SQLException e) {
                 e.printStackTrace();
             }
         }
-        return studentrItemDBS;
+        return studentItemDao;
     }
 
 
@@ -100,7 +105,7 @@ public class DatabaseHelper extends OrmLiteSqliteOpenHelper {
 
     @Override
     public void close() {
-        studentrItemDBS = null;
+        studentItemDao = null;
         teacherItemDao = null;
         super.close();
     }

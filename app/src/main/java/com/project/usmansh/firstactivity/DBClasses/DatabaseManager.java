@@ -79,7 +79,7 @@ public class DatabaseManager {
     }
 
 
-    public int insertStudentItem(StudentItemTable stuItemDB, boolean isEdit){
+        public int insertStudentItem(StudentItemTable stuItemDB, boolean isEdit){
         int count = 0;
         try {
             UpdateBuilder updateBuilder = studentItemDao.updateBuilder();

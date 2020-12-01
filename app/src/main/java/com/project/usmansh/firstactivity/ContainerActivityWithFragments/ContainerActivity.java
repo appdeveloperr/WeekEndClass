@@ -12,8 +12,8 @@ import com.project.usmansh.firstactivity.R;
 public class ContainerActivity extends AppCompatActivity {
 
 
-    BottomNavigationView bottomNavigationView;
-    NavHostFragment navHostFragment;
+        BottomNavigationView bottomNavigationView;
+        NavHostFragment navHostFragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,9 +27,8 @@ public class ContainerActivity extends AppCompatActivity {
 
     public void setUpNavigation(){
         bottomNavigationView = findViewById(R.id.bottom_nav_view);
-         navHostFragment =  (NavHostFragment)getSupportFragmentManager().findFragmentById(R.id.my_nav_host_fragment);
+        navHostFragment =  (NavHostFragment)getSupportFragmentManager().findFragmentById(R.id.my_nav_host_fragment);
 
-        NavigationUI.setupWithNavController(bottomNavigationView,
-                navHostFragment.getNavController());
+        NavigationUI.setupWithNavController(bottomNavigationView,navHostFragment.getNavController());
     }
 }

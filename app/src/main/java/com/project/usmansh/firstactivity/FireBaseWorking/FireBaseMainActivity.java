@@ -1,6 +1,6 @@
 package com.project.usmansh.firstactivity.FireBaseWorking;
 
-import androidx.annotation.NonNull;
+
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -44,16 +44,12 @@ public class FireBaseMainActivity extends AppCompatActivity {
      StorageReference storageRef;
      Button pickImageBt;
     ImageView user_image_Iv;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fire_base_main);
 
-
-         user_image_Iv = (ImageView) findViewById(R.id.user_image_Iv);
-
-
+    
         pickImageBt = findViewById(R.id.pickImageBt);
         storageRef = FirebaseStorage.getInstance().getReference();
 //
@@ -73,11 +69,6 @@ public class FireBaseMainActivity extends AppCompatActivity {
 
             }
         });
-
-
-
-
-
 
 
     }
@@ -175,7 +166,6 @@ public class FireBaseMainActivity extends AppCompatActivity {
 
 
     }
-
 
 
 
