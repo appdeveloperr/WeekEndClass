@@ -6,6 +6,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
+
+import com.bumptech.glide.Glide;
+import com.project.usmansh.firstactivity.FireBaseWorking.FireBaseMainActivity;
 import com.project.usmansh.firstactivity.Model.Student;
 import com.project.usmansh.firstactivity.R;
 import java.util.ArrayList;
@@ -38,10 +41,12 @@ public class StudentLVAdapter extends BaseAdapter {
         TextView studentNameTextView = view.findViewById(R.id.studentNameTextView);
 
 
+
         //Getting Students Object from List and Set Student data on layoute components
         Student stu = studentsList.get(position);
 
         studentNameTextView.setText(stu.getName());
+        Glide.with(context).load(stu.getImageURL()).into(profileImage);
 
         return view;
     }

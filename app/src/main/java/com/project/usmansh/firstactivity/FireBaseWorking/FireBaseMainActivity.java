@@ -8,16 +8,23 @@ import android.app.Activity;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
 import com.github.dhaval2404.imagepicker.ImagePicker;
+import com.google.android.gms.tasks.Continuation;
+import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
@@ -36,16 +43,21 @@ public class FireBaseMainActivity extends AppCompatActivity {
 
      StorageReference storageRef;
      Button pickImageBt;
+    ImageView user_image_Iv;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fire_base_main);
 
+
+         user_image_Iv = (ImageView) findViewById(R.id.user_image_Iv);
+
+
         pickImageBt = findViewById(R.id.pickImageBt);
         storageRef = FirebaseStorage.getInstance().getReference();
 //
-//        myRef = FirebaseDatabase.getInstance().getReference("Students");
+       myRef = FirebaseDatabase.getInstance().getReference("Students");
 //        addStudentsIntoFireBase();
 //        getStudentsList();
 
@@ -87,26 +99,38 @@ public class FireBaseMainActivity extends AppCompatActivity {
     private void uploadFileToFirebase(Uri file) {
 
         Random random = new Random();
-        String randomNumber = String.valueOf(random.nextInt());
+        final String randomNumber = String.valueOf(random.nextInt());
 
-        StorageReference newStorageRef = storageRef.child("image_"+randomNumber+".png");
+        final StorageReference newStorageRef = storageRef.child("image_"+randomNumber+".png");
 
-        newStorageRef.putFile(file)
-                .addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
-                    @Override
-                    public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                        Toast.makeText(FireBaseMainActivity.this, "Uploaded file Success", Toast.LENGTH_SHORT).show();
-//                        // Get a URL to the uploaded content
-//                        Uri downloadUrl = taskSnapshot.getUploadSessionUri();
-                    }
-                })
-                .addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception exception) {
-                        // Handle unsuccessful uploads
-                        Toast.makeText(FireBaseMainActivity.this, "Error File uploading", Toast.LENGTH_SHORT).show();
-                    }
-                });
+        //add file on Firebase and got Download Link
+        newStorageRef.putFile(file).continueWithTask(new Continuation<UploadTask.TaskSnapshot, Task<Uri>>() {
+            @Override
+            public Task<Uri> then(@NonNull Task<UploadTask.TaskSnapshot> task) throws Exception {
+                if (!task.isSuccessful()){
+                    throw task.getException();
+                }
+                return newStorageRef.getDownloadUrl();
+            }
+        }).addOnCompleteListener(new OnCompleteListener<Uri>() {
+            @Override
+            public void onComplete(@NonNull Task<Uri> task) {
+                if (task.isSuccessful()){
+                    Toast.makeText(FireBaseMainActivity.this, "Uploaded file Success", Toast.LENGTH_SHORT).show();
+                    Uri downUri = task.getResult();
+
+                    Student student1 = new Student("Usman", "03224668246", "Krachi");
+                    student1.setImageURL(downUri.toString());
+                    myRef.child(student1.getName()).setValue(student1);
+
+                    Glide.with(FireBaseMainActivity.this).load(student1.getImageURL()).into(user_image_Iv);
+
+
+                }
+            }
+        });
+
+
     }
 
     private void addStudentsIntoFireBase() {

@@ -5,6 +5,17 @@ public class Student {
     String name;
     String phone;
     String address;
+    String imageURL;
+
+
+    public String getImageURL() {
+        return imageURL;
+    }
+
+    public void setImageURL(String imageURL) {
+        this.imageURL = imageURL;
+    }
+
 
 
     public Student() {
